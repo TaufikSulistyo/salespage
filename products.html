@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Adminpage In Wndows Metro Style</title>
+<link href="assets/css/metro.css" rel="stylesheet">
+<link href="assets/css/metro-icons.css" rel="stylesheet">
+<link href="assets/css/metro-responsive.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-steel">
+<div class="app-bar fixed-top daroula" data-role="appbar">
+<a class="app-bar-element branding">Point Of Sale</a>
+<span class="app-bar-divider"></span>
+<div class="app-bar-element place-right">
+<span class="dropdown-toogle"><span class="mif-cog"></span> User Name</span>
+<div class="app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark"
+data-role="dropdown"
+data-no-close="true">
+<h2 class="text-light">Quick Setting</h2>
+<ul class="unstyled-list fg-dark">
+<li><a href="" class="fg-white1 fg-hover-yellow">Profile</a></li>
+<li><a href="" class="fg-white2 fg-hover-yellow">Security</a></li>
+<li><a href="" class="fg-white3 fg-hover-yellow">Exit</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="page-content">
+<div class="flex-grid no-responsive-future duwur">
+<div class="row duwur">
+<div class="cell size-x200" id="cell-sidebar">
+<ul class="sidebar">
+<li><a href="index.html">
+<span class="mif-apps icon"></span>
+<span class="title">Dashboard</span>
+<span class="counter">1</span>
+</a></li>
+<li><a href="#">
+<span class="mif-list2 icon"></span>
+<span class="title">Categories</span>
+<span class="counter">0</span>
+</a></li>
+<li class="active"><a href="#">
+<span class="mif-gift icon"></span>
+<span class="title">Products</span>
+<span class="counter">2</span>
+</a></li>
+</ul>
+</div>
+<div class="cell auto-size padding20 bg-white" id="cell-content">
+<h1 class="text-light">New Product<span class="mif-gift place-right"></span></h1>
+<hr class="thin bg-grayLighter">
+<div class="grid">
+<div class="row">
+<div class="input-control modern text">
+<input type="text" id="productsname">
+<span class="label">Product Name</span>
+<span class="informer">Please enter your product name</span>
+<span class="placeholder">Input product name</span>
+</div>
+</div>
+<div class="row">
+<div class="input-control modern text">
+<input type="text" id="unitinstock">
+<span class="label">Unit in Stock</span>
+<span class="informer">Please enter unnit in stock</span>
+<span class="placeholder">Input unit in stock</span>
+</div>
+</div>
+<div class="row">
+<div class="input-control textarea"
+data-role="input" data-text-auto-resize="true" data-text-max-height="200">
+<span class="label">Product Description</span>
+<textarea></textarea>
+</div>
+</div>
+<div class="input-control text" data-role="datepicker">
+<span class="label">Expire Date</span>
+<input type="text">
+<button class="button"><span class="mif-calendar"></span></button>
+</div>
+<div class="raw">
+<div class="input-control file" data-role="input">
+<span class="label">Upload Photo</span>
+<input type="file">
+<button class="button"><span class="mif-folder"></span></button>
+</div>
+</div>
+<div class="raw cells2">
+<button class="button success" onclick="pushMessage('success')">Submit</button>
+<button class="button danger" onclick="pushMessage('alert')">Cancel</button>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<script src="assets/js/jquery-2.1.3.min.js"></script>
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/metro.js"></script>
+<script>
+function pushMessage(t){
+	var mes='Info|Implement independently';
+	$.Notify({
+		caption: mes.split("|")[0],
+		content: mes.split("|")[1],
+		type:t
+		});
+	}
+$(function(){
+	$('.sidebar').on('click', 'li', function(){
+		if (!$(this).hasClass('active')){
+			$('.sidebar li').removeClass('active');
+			$(this).addClass('active');
+		}
+		})
+	})
+</script>
+</body>
+</html>
